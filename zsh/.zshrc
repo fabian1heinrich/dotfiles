@@ -75,8 +75,8 @@ plugins=(
     docker
     docker-compose
     fzf
-    fzf-tab
-    zsh-autosuggestions
+    # fzf-tab
+    # zsh-autosuggestions
 )
 
 source ~/aliases.zsh
