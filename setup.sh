@@ -7,9 +7,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # starship
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" "" -y
 
-# stow init
-rm ~/.zshrc
-stow -t ~ zsh
-stow -t ~/.config starship
+# stow
+stow --adopt -t ~ */ 
+git restore .
 
 source ~/.zshrc
