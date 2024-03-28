@@ -7,5 +7,3 @@ zsh install-zsh-plugins.zsh
 # stow
 stow --adopt -t ~ */ 
 git restore .
-
-exec zsh
