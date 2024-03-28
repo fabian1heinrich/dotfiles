@@ -8,4 +8,4 @@ zsh install-zsh-plugins.zsh
 stow --adopt -t ~ */ 
 git restore .
 
-source ~/.zshrc
+exec zsh
