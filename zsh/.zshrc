@@ -75,8 +75,9 @@ plugins=(
     docker
     docker-compose
     fzf
-    # fzf-tab
-    # zsh-autosuggestions
+    fzf-tab
+    zsh-autosuggestions
+    z
 )
 
 source ~/aliases.zsh
@@ -109,3 +110,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
