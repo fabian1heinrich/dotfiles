@@ -78,6 +78,7 @@ plugins=(
     fzf-tab
     zsh-autosuggestions
     z
+    zsh-syntax-highlighting
 )
 
 source ~/aliases.zsh
@@ -109,5 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
