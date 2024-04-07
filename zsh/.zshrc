@@ -71,13 +71,14 @@ ZSH_THEME="af-magic"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
     docker
     docker-compose
     fzf
     fzf-tab
-    zsh-autosuggestions
+    git
     z
+    zsh-autosuggestions
+    zsh-history-substring-search
     zsh-syntax-highlighting
 )
 
