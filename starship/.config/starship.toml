@@ -11,16 +11,18 @@ $git_branch\
 """
 
 [username]
-format = '[$user]($style) '
+format = '[$user]($style)[@]($style)'
 disabled = false
 show_always = true
+style_user = 'bold green'
 
 [hostname]
 ssh_only = false
 format = '[$ssh_symbol]($style)[$hostname]($style) '
 disabled = false
 ssh_symbol = "🌍 "
-trim_at = '-'
+trim_at = '.'
+style = 'bold green'
 
 [docker_context]
 symbol = "🐳"
@@ -35,7 +37,7 @@ contexts = [
 
 [git_branch]
 symbol = '🌱 '
-truncation_length = 4
+truncation_length = 20
 truncation_symbol = ''
 format = '[$symbol$branch(:$remote_branch)]($style) '
 
