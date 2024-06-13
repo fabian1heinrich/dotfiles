@@ -77,6 +77,7 @@ plugins=(
     fzf
     fzf-tab
     git
+    you-should-use
     z
     zsh-autosuggestions
     zsh-history-substring-search
@@ -85,6 +86,8 @@ plugins=(
 
 source ~/aliases.zsh
 source $ZSH/oh-my-zsh.sh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 
 # User configuration
 
@@ -114,5 +117,7 @@ source $ZSH/oh-my-zsh.sh
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey '^ I'   complete-word       # tab          | complete
+bindkey '^ [[Z' autosuggest-accept  # shift + tab  | autosuggest
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
