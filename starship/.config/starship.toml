@@ -1,4 +1,5 @@
 "$schema" = 'https://starship.rs/config-schema.json'
+add_newline = false
 
 format = """
 $username\
@@ -26,14 +27,14 @@ style = 'bold green'
 
 [docker_context]
 symbol = "🐳"
-format = '[$symbol$context]($style) '
+format = '[$symbol $context]($style) '
 
 [kubernetes]
-format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+# format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
 disabled = false
-contexts = [
-    { context_pattern = "dev.local.cluster.k8s", style = "green", symbol = "💔 " },
-]
+# contexts = [
+#     { context_pattern = "dev.local.cluster.k8s", style = "green", symbol = "💔 " },
+# ]
 
 [git_branch]
 symbol = '🌱 '
