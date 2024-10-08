@@ -3,3 +3,5 @@ name = Fabian Heinrich
 email = fabianheinrich@aol.com
 [init]
 defaultBranch = main
+[safe]
+	directory = /workspaces/dotfiles
