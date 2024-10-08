@@ -5,6 +5,15 @@
   "image": "mcr.microsoft.com/devcontainers/base:bookworm",
   "remoteUser": "vscode",
   "containerUser": "vscode",
-  "runArgs": ["--name", "${localWorkspaceFolderBasename}"],
-  "postStartCommand": "bash .devcontainer/setup.sh"
+  "runArgs": [
+    "--name",
+    "${localWorkspaceFolderBasename}"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "dotfiles.repository": ""
+      }
+    }
+  }
 }

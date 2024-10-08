@@ -8,5 +8,5 @@ curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh 
 zsh install-zsh-plugins.zsh
 
 # stow
-rm ~/.zshrc ~/.gitconfig ~/.config/starship.toml
+rm -f ~/.zshrc ~/.gitconfig ~/.config/starship.toml
 stow git zsh starship lsd alacritty --target=$HOME

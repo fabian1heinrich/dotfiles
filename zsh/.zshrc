@@ -42,9 +42,13 @@ zstyle ':omz:plugins:docker' legacy-completion yes
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
+
+VIRTUAL_ENV_DISABLE_PROMPT=1
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[OA' history-substring-search-up
