@@ -4,4 +4,4 @@ email = fabianheinrich@aol.com
 [init]
 defaultBranch = main
 [safe]
-	directory = /workspaces/dotfiles
+directory = /workspaces/dotfiles

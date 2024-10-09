@@ -21,28 +21,18 @@ style_user = 'bold green'
 ssh_only = false
 format = '[$ssh_symbol]($style)[$hostname]($style) '
 disabled = false
-ssh_symbol = "🌍 "
+ssh_symbol = "🌍"
 trim_at = '.'
 style = 'bold green'
 
-[docker_context]
-symbol = "🐳"
-format = '[$symbol $context]($style) '
-
-[kubernetes]
-# format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
-disabled = false
-# contexts = [
-#     { context_pattern = "dev.local.cluster.k8s", style = "green", symbol = "💔 " },
-# ]
-
 [git_branch]
-symbol = '🌱 '
+symbol = '🌱'
 truncation_length = 20
 truncation_symbol = ''
 format = '[$symbol$branch(:$remote_branch)]($style) '
 
 [python]
-symbol = "🐍 "
-format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = "🐍"
+style = "yellow bold"
+format = '[${symbol} ${version} ($virtualenv)]($style)'
 version_format = "v${major}.${minor}"
