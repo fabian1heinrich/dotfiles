@@ -7,7 +7,9 @@ bindings = [
     { chars = "\u001bOF", key = "Right", mods = "Command" },
     { chars = "\u0015", key = "Back", mods = "Command" },
     { chars = "\u001b\u007f", key = "Back", mods = "Alt" },
+    { key = "C", mods = "Alt", chars = "\u001bc" },
 ]
+
 
 [window]
 padding.x = 10

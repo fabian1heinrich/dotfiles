@@ -5,24 +5,30 @@ pupdate $HOME/bin
 pupdate /usr/local/bin
 pupdate /opt/homebrew/bin
 pupdate /usr/local/bin
-pupdate /System/Cryptexes/App/usr/bin
+# pupdate /System/Cryptexes/App/usr/bin
 pupdate /usr/bin
 pupdate /bin
 pupdate /usr/sbin
 pupdate /sbin
 pupdate $HOME/.local/bin
+pupdate /nix/var/nix/profiles/default/bin
+pupdate /run/current-system/sw/bin
 
 # history
 export HISTFILE=~/.zsh_history
-export HISTFILESIZE=1000000000
-export HISTSIZE=1000000000
+export HISTTIMEFORMAT="%Y/%m/%d %H:%M:%S:   "
+export HISTSIZE=50000
+export SAVEHIST=50000
 setopt INC_APPEND_HISTORY
-export HISTTIMEFORMAT="[%F %T] "
-setopt EXTENDED_HISTORY
-setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
 
-setopt globdots
+# setopt globdots
+autoload -U compinit
+compinit
+_comp_options+=(globdots)
 
 ZSH_THEME="af-magic"
 plugins=(
@@ -38,39 +44,36 @@ plugins=(
   zsh-syntax-highlighting
   zsh-history-substring-search
 )
-zstyle ':omz:plugins:docker' legacy-completion yes
-zstyle ':completion:*:*:docker:*' option-stacking yes
-zstyle ':completion:*:*:docker-*:*' option-stacking yes
+# zstyle ':omz:plugins:docker' legacy-completion yes
+# zstyle ':completion:*:*:docker:*' option-stacking yes sort true
+# zstyle ':completion:*:*:docker-*:*' option-stacking yes sort true
+zstyle ':completion:*' sort false
 
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+# FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
+source $HOME/.aliases
+source <(kubectl completion zsh)
 
 VIRTUAL_ENV_DISABLE_PROMPT=1
 
 bindkey '^[[A' history-substring-search-up
-bindkey '^[OA' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-bindkey '^[OB' history-substring-search-down
-bindkey "^[[1;5F" dirhistory_zle_dirhistory_future
-bindkey "^[[1;5H" dirhistory_zle_dirhistory_back
-# bindkey "^[f" forward-word
-# bindkey "^[b" backward-word
+bindkey "^[[1;3B" dirhistory_zle_dirhistory_future
+bindkey "^[[1;3A" dirhistory_zle_dirhistory_back
+bindkey "ç" fzf-cd-widget
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-# aliases
-alias k="kubectl"
-alias ls="lsd"
-
 # fzf
-# Preview file content using bat (https://github.com/sharkdp/bat)
 export FZF_CTRL_T_OPTS="
   --walker-skip .git,node_modules,target
   --preview 'bat -n --color=always {}'
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'
+  --bind 'shift-up:preview-page-up,shift-down:preview-page-down'
+  --height=100%"
 
 # CTRL-/ to toggle small preview window to see the full command
 # CTRL-Y to copy the command into clipboard using pbcopy

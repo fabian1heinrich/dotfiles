@@ -1,0 +1,4 @@
+alias k="kubectl"
+alias ls="lsd"
+# alias bat="batcat"
+# alias fdfind="fd"

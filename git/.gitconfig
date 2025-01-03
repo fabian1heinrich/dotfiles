@@ -5,3 +5,5 @@ email = fabianheinrich@aol.com
 defaultBranch = main
 [safe]
 directory = /workspaces/dotfiles
+[credential]
+	helper = "!f() { /home/vscode/.vscode-server/bin/42b266171e51a016313f47d0c48aca9295b9cbb2/node /tmp/vscode-remote-containers-ab3347d6-3a7a-4b12-8fd8-6b3335c55b06.js git-credential-helper $*; }; f"
